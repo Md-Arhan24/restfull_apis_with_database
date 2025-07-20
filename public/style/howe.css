@@ -1,0 +1,35 @@
+.form{
+    display: none;
+    height: 45vh;
+    width: 30vw;
+    background-color:rgb(255, 255, 255,0.7);
+    position: absolute;
+    top: 25vh;
+    right : 33vw;
+    border: 1px solid black;
+    
+    }
+.form form{
+  height: inherit;
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2vh;
+}
+#cancel-btn{
+  background-color: rgb(255, 255, 255,0.7);
+  border: none;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  border-radius: 50%;
+}
+#cancel-btn img{
+  height: 40px;
+  width: 40px;
+  
+}

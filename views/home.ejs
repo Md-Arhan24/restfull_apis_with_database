@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home page</title>
+  </head>
+  <link rel="stylesheet" href="/style/howe.css" />
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Team Management</title>
+      </head>
+      <body>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3 bg-dark text-white p-4">
+              <h2>My Projects</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Open</a></li>
+                <li><a href="#" class="text-white">Recents</a></li>
+                <li><a href="#" class="text-white">My projects</a></li>
+                <li><a href="#" class="text-white">Team</a></li>
+                <li><a href="#" class="text-white">Invite users</a></li>
+                <li><a href="#" class="text-white">Settings</a></li>
+              </ul>
+            </div>
+            <div class="col-md-9 p-4">
+              <h2>Team</h2>
+              <button class="btn btn-primary mb-3" id="newProjectBtn">
+                + New project
+              </button>
+              <button class="btn btn-secondary mb-3" id="newUserBtn">
+                + New user
+              </button>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>profile</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(u of users) {%>
+                  <tr>
+                    <td><%= u.user %></td>
+                    <td><%= u.email %></td>
+                    <td><a href="/user/<%=u.id%>">view</a></td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="form">
+          <button id="cancel-btn">
+            <img src="/assets/cancel.png" alt="" />
+          </button>
+          <form action="/user/add" method="post">
+            <input type="text" name="name" placeholder="name" />
+            <input type="email" name="email" placeholder="email" />
+            <input type="password" name="password" placeholder="password" />
+            <button type="submit" class="btn btn-primary">submit</button>
+          </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script src="/code/home.js"></script>
+      </body>
+    </html>
+  </body>
+</html>
